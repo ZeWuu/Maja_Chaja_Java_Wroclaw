@@ -34,3 +34,11 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+jar {
+    archiveFileName = 'Maja_Chaja_Java_Wroclaw.jar' // Change the name here
+    from {
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
