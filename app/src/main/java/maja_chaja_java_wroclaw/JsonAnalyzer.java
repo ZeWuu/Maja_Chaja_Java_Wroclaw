@@ -18,6 +18,10 @@ public class JsonAnalyzer {
         this.gson = new Gson();
     }
 
+    // This method reads the JSON file and returns its content as a Map<String, List<String>> object
+    // The JSON file contains a map where the key is a product name and the value is a list of delivery methods
+    // The method uses the Gson library to parse the JSON file
+    
     public Map<String, List<String>> getJson() {
         try {
             Type type = new TypeToken<Map<String, List<String>>>() {
