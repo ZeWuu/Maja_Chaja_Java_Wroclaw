@@ -9,7 +9,12 @@ import java.util.Map;
 public class App {
     public static void main(String[] args) {
         BasketSplitter splitter = new BasketSplitter("src/main/resources/config.json");
-        List<String> basket = List.of("Cocoa Butter", "Tart - Raisin And Pecan", "Table Cloth 54x72 White", "Flower - Daisies", "Fond - Chocolate", "Cookies - Englishbay Wht");
+        List<String> basket = List.of("Fond - Chocolate", "Chocolate - Unsweetened", "Nut - Almond, Blanched, Whole", "Haggis", "Mushroom - Porcini Frozen", "Cake - Miini Cheesecake Cherry", "Sauce - Mint", "Longan", "Bag Clear 10 Lb", "Nantucket - Pomegranate Pear", "Puree - Strawberry", "Numi - Assorted Teas", "Apples - Spartan", "Garlic - Peeled", "Cabbage - Nappa", "Bagel - Whole White Sesame", "Tea - Apple Green Tea");
         Map<String, List<String>> result = splitter.split(basket);
+
+        for (Map.Entry<String, List<String>> entry : result.entrySet()) {
+            System.out.println("Delivery method: " + entry.getKey());
+            System.out.println("Products: " + entry.getValue());
+        }
     }
 }
